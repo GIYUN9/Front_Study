@@ -5,6 +5,12 @@
     flex-direction: row;
     justify-content: space-between;
 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+
     background-color: #212121FF;
     border-bottom-width: 1px;
     border-bottom-style: solid;
@@ -122,7 +128,7 @@
     right: -6px;
     background-color: red;
     color: white;
-    font-size: 12px;
+    font-size: 11px;
     padding: 1px 5px;
     border-radius: 10px;
 }
