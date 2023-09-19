@@ -132,6 +132,7 @@ const str = "안녕하세요 저는 최지원입니다. \n \t나이는 60살입�
 console.log(str);
 
 const name = "최지원";
+console.log('안녕하세요 '+ name + '입니다.');
 console.log(`안녕하세요 ${name}입니다`);
 
 
@@ -210,7 +211,13 @@ console.log(dictionary.yellow);
  * 
  * 값을 리스트로 나열할 수 있는타입
  */
-const arr = ["빨간색", "주황색", "노란색", "초록색"];
+const arr = [];
+arr.push("빨간색");
+arr.push("주황색");
+arr.push("노란색");
+arr.pop();
+
+// const arr = ["빨간색", "주황색", "노란색", "초록색"];
 console.log(arr[0]);
 
 arr.push('이상한색');
@@ -223,5 +230,9 @@ console.log(arr);
  * 1씩 올라간다.
  */
 
+
 console.log(arr[0]);
 console.log(arr[4]);
+
+arr[0] = 12;
+console.log(arr);
