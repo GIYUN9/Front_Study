@@ -39,4 +39,3 @@ console.log(!!'');
 console.log(!![]);
 
 console.log({name : 'jiwon'} == {name : 'jiwon'});
-
