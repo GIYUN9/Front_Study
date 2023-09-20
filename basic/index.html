@@ -105,11 +105,17 @@
     <input type="button" value="ButtonB" onclick="alert('클릭')">
     <span onclick="alert('클릭')">ButtonC</span>
 
-    <select>
+    <select id="select-box" onchange="selectTmp()">
         <option value="blue">파란색</option>
-        <option>빨간색</option>
-        <option>노란색</option>
+        <option value="red">빨간색</option>
+        <option value="yellow">노란색</option>
     </select>
+    <script>
+        function selectTmp(){
+            const selectBox = document.getElementById('select-box');
+            console.log(selectBox.value);
+        }
+    </script>
 
     <div>
         <input type="radio" name="color" id="radio-b">
