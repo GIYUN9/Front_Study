@@ -32,13 +32,13 @@
       // 스크립트작성
       function table_make() {
 
-        var row = window.prompt("행 개수를 입력하세요.")
-        var col = window.prompt("열 개수를 입력하세요.")
+        let row = window.prompt("행 개수를 입력하세요.")
+        let col = window.prompt("열 개수를 입력하세요.")
 
         document.write("<table border='1px;'>")
-        for (var i = 0; i < row; i++) {
+        for (let i = 0; i < row; i++) {
             document.write("<tr height='50px'>");
-            for (var j = 0; j < col; j++) {
+            for (let j = 0; j < col; j++) {
                 document.write("<td width='50px'>");
             }
         }
