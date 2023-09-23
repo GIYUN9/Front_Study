@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .area{
+            border: 1px solid black;
+        }
+        .choose{
+            border: 1px solid red;
+            width: 500px;
+            height: 70px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Practice 1</h2>
+        <br>
+        <fieldset class="area">
+            <legend>취미</legend>
+            <input type="checkbox" id="전체선택" name="selectAll" onclick='selectAll(this)'>
+            <label for="전체선택">전체선택</label>
+
+            <input type="checkbox" id="종합" name="category" onclick='checkSelectAll()' value="종합">
+            <label for="종합">종합</label>
+
+            <input type="checkbox" id="시/에세이" name="category" onclick='checkSelectAll()' value="시/에세이">
+            <label for="시/에세이">시/에세이</label>
+
+            <input type="checkbox" id="경제/경영" name="category" onclick='checkSelectAll()' value="경제/경영">
+            <label for="경제/경영">경제/경영</label>
+
+            <input type="checkbox" id="자기계발" name="category" onclick='checkSelectAll()' value="자기계발">
+            <label for="자기계발">자기계발</label>
+
+            <input type="checkbox" id="아동" name="category" onclick='checkSelectAll()' value="아동">
+            <label for="아동">아동</label><br>
+
+            <input type="checkbox" id="여행" name="category" onclick='checkSelectAll()' value="여행">
+            <label for="여행">여행</label>
+            
+            <input type="checkbox" id="과학" name="category" onclick='checkSelectAll()' value="과학">
+            <label for="과학">과학</label>
+
+            <input type="checkbox" id="역사/문화" name="category" onclick='checkSelectAll()' value="역사/문화">
+            <label for="역사/문화">역사/문화</label>
+
+            <input type="checkbox" id="외국어" name="category" onclick='checkSelectAll()' value="외국어">
+            <label for="외국어">외국어</label>
+
+            <input type="checkbox" id="컴퓨터" name="category" onclick='checkSelectAll()' value="컴퓨터">
+            <label for="컴퓨터">컴퓨터</label>
+
+            <input type="checkbox" id="만화" name="category" onclick='checkSelectAll()' value="만화">
+            <label for="만화">만화</label>
+        </fieldset>
+    </div>
+    <br>
+
+    <button onclick="cateChoose()">카테고리 선택</button>
+    <div class="choose" id="area"></div>
+
+    <script>
+        function checkSelectAll()  {
+            const checkboxes = document.querySelectorAll('input[name="category"]');
+            const checked = document.querySelectorAll('input[name="category"]:checked');
+            const selectAll = document.querySelector('input[name="selectall"]');
+  
+            if(checkboxes.length === checked.length)  {
+                selectAll.checked = true;
+            }else {
+                selectAll.checked = false;
+            }
+        }
+
+        function selectAll(selectAll)  {
+            const checkboxes = document.getElementsByName('category');
+        
+            checkboxes.forEach((checkbox) => { 
+                checkbox.checked = selectAll.checked
+            })
+        }
+
+        function cateChoose(){
+            let category = document.getElementsByName('cateChoose');
+            const area = document.getElementById('area');
+            area.innerHTML = '';
+
+            for(let checkbox of category){
+                if(checkbox.checked){
+                    area.innerHTML += checkbox.value + " ";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
