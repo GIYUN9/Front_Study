@@ -80,21 +80,22 @@
             const checkboxes = document.getElementsByName('category');
         
             checkboxes.forEach((checkbox) => { 
-                checkbox.checked = selectAll.checked
+                checkbox.checked = selectAll.checked;
             })
         }
 
         function cateChoose(){
-            let category = document.getElementsByName('cateChoose');
+            let category = document.getElementsByName('category');
             const area = document.getElementById('area');
             area.innerHTML = '';
 
             for(let checkbox of category){
-                if(checkbox.checked){
+                if(checkbox.checked) {
                     area.innerHTML += checkbox.value + " ";
                 }
             }
         }
+        // 전체 체크후 하나 선택 해제시 전체 체크박스해재 구현못함
     </script>
 
 </body>
