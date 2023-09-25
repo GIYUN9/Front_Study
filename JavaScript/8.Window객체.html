@@ -207,13 +207,19 @@
         function test5(){
             // <img src="" width="" height="">
             
-            let img = document.createElement('img') // <img>
-            img.src = "https://shopping-phinf.pstatic.net/main_8460067/84600679901.jpg?type=f300"
-            img.style.width = '100';
-            img.style.height = '300';
+            let img1 = document.createElement('img') // <img>
+            img1.src = "https://shopping-phinf.pstatic.net/main_8460067/84600679901.jpg?type=f300"
+            img1.style.width = '100';
+            img1.style.height = '300';
+
+            let img2 = document.createElement('img') // <img>
+            img2.src = "https://s.pstatic.net/shopping.phinf/20230913_9/fc294bb8-17ca-47e3-946d-e6157e003edb.jpg?type=f300"
+            img2.style.width = '100';
+            img2.style.height = '300';
 
             let area = document.getElementById('area5');
-            area.appendChild(img);
+            area.appendChild(img1);
+            area.appendChild(img2);
         }
     </script>
     
