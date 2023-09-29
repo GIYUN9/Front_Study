@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .area{
+            text-align: center;
+            justify-content: center;
+        }
+        label{
+            padding: 0px 15px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset class="area">
+        <legend>검색할 항목을 선택하세요.</legend>
+        <label>
+            <input type="radio" onclick="title()">제목
+        </label>
+        <label>
+            <input type="radio" onclick="date()">날짜
+        </label>
+        <label>
+            <input type="radio" onclick="pub()">작성자
+        </label>
+    </fieldset>
+</body>
+</html>

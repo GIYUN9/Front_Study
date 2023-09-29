@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .area{
+            border: 1px solid black;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>구매 정보</legend>
+        <li>구매자 : <input type="text" placeholder="구매자의 이름을 입력하세요" id="cus"></li>
+        <li>상품명 : <input type="text" placeholder="구매 상품 명을 입력하세요" id="pro"></li>
+        <li>가격 : <input type="number" placeholder="구매 가격을 입력하세요" id="price"></li>
+        <li>구매 수량 : <input type="number" placeholder="최소 10." min="10" max="100" step="10" id="amount"></li>
+        <li>납품 등급 : <input type="range" min="1" max="9" step="2" id="tier"></li>
+        <li>기타 사항 : <input type="text" style="height: 80px; width: 180px;" id="des"></li>
+    </fieldset>
+    <br>
+    <button onclick="oc()">입력 값 출력하기</button>
+    <br>
+    <div class="area" id="area1"></div>
+
+    <script>
+        function oc(){
+        const cus = document.getElementById('cus').value;
+        const pro = document.getElementById('pro').value;
+        const price = document.getElementById('price').value;
+        const amount = document.getElementById('amount').value;
+        const tier = document.getElementById('tier').value;
+        const des = document.getElementById('des').value;
+        
+        const area1 = document.getElementById('area1');
+        area1.innerHTML = "구매자명 : "+ cus + "님 <br>" +
+                        "상품 명 : " + pro + "<br>" +
+                        "가격 : " + price + "만원 <br>" +
+                        "구매수량 : "+ amount + "개 <br>" +
+                        "납품등급 : " + tier + "등급 <br>" +
+                        "기타사항 : " + des + "<br>";
+        }
+    </script>
+</body>
+</html>
