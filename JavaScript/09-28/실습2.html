@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- jquery 3.7.1 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <style>
+
         .area{
             text-align: center;
             justify-content: center;
@@ -12,9 +17,11 @@
         label{
             padding: 0px 15px;
         }
-        .find{
-            border: 1px solid gray;
-            background: gray;
+        .drop{
+            border: 1px solid rgb(188, 187, 187);
+            background: rgb(188, 187, 187);
+            padding: 10px;
+            display: none;
         }
     </style>
 </head>
@@ -22,20 +29,51 @@
     <fieldset class="area">
         <legend>검색할 항목을 선택하세요.</legend>
         <label>
-            <input type="radio" onclick="title()" name="radio">제목
+            <input type="radio" id="title" name="radio">제목
         </label>
         <label>
-            <input type="radio" onclick="date()" name="radio">날짜
+            <input type="radio" id="date" name="radio">날짜
         </label>
         <label>
-            <input type="radio" onclick="pub()" name="radio">작성자
+            <input type="radio" id="pub" name="radio">작성자
         </label>
     </fieldset>
+    <br>
 
+    <div class="drop" id="title-menu">
+        <div>검색할 제목을 입력하세요 : </div>
+        <input type="text" id="title">
+        <button onclick="title">검색</button>
+    </div>
+    <div class="drop" id="date-menu">
+        <div>검색할 날짜를 선택하세요 : </div>
+        <input type="date" name="date-start"> - <input type="date" name="date-end">
+        <button onclick="title">검색</button>
+    </div>
+    <div class="drop" id="pub-menu">
+        <div>검색할 작성자 아이디를 입력하세요 : </div>
+        <input type="text">
+        <button onclick="title">검색</button>
+    </div>
+        
     <script>
-        function table(){
-            <div class="find">으아</div>
-        }
+        $(function(){
+            $('#title').click(function(){
+                $('#title-menu').show();
+                $('#date-menu').hide();
+                $('#pub-menu').hide();
+            })
+            $('#date').click(function(){
+                $('#date-menu').show();
+                $('#title-menu').hide();
+                $('#pub-menu').hide();
+            })
+            $('#pub').click(function(){
+                $('#pub-menu').show();
+                $('#title-menu').hide();
+                $('#date-menu').hide();
+            })
+        })
     </script>
 </body>
 </html>
