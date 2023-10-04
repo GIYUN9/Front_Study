@@ -56,12 +56,9 @@
     </table>
 
     <script>
-        // 계산식
         let expression = "";
-        // 연산자
         let operator = "";
 
-        // 버튼 클릭 이벤트
         document.querySelectorAll(".number").forEach((button) => {
             button.addEventListener("click", () => {
                 expression += button.textContent;
@@ -71,19 +68,14 @@
 
         document.querySelectorAll(".operator").forEach((button) => {
             button.addEventListener("click", () => {
-                // 연산자가 연속해서 들어가면 알림창 띄우기
                 if (operator && operator !== "=") {
                     alert("한 번에 연산자가 두 개 붙을 수 없습니다.");
                     return;
                 }
-
-                // 연산자로 끝난 상태에서 계산 버튼(=)을 누르면 알림창 띄우기
                 if (expression.endsWith(operator)) {
                     alert("계산할 수 없습니다. 식을 완성시켜 주세요.");
                     return;
                 }
-
-                // 맨 앞 연산자가 * 또는 /, %이면 알림창 띄우기
                 if (!operator && expression[0] === "*" || expression[0] === "/" || expression[0] === "%") {
                     alert("처음은 연산자가 나올 수 없습니다.");
                     return;
@@ -93,39 +85,32 @@
                 updateResult();
             });
         });
-
-        // C 버튼 클릭 이벤트
         document.querySelector(".clear").addEventListener("click", () => {
             expression = "";
             operator = "";
             updateResult();
         });
 
-        // bs 버튼 클릭 이벤트
         document.querySelector(".backspace").addEventListener("click", () => {
             if (expression.length > 0) {
                 expression = expression.slice(0, -1);
                 updateResult();
             }
         });
-
-        // 계산 버튼(=) 클릭 이벤트
+트
         document.querySelector(".operator").lastElementChild.addEventListener("click", () => {
             calculate();
         });
 
-        // 계산
         function calculate() {
             let result = eval(expression);
             updateResult(result);
         }
 
-       // 결과 출력
         function updateResult(value) {
             document.querySelector("#result").value = value;
         }
 
-        // 계산식 삭제 이벤트
         document.querySelectorAll(".number, .operator").forEach((button) => {
             button.addEventListener("keydown", (e) => {
                 if (e.keyCode === 8) {
