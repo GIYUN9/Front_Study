@@ -1,0 +1,20 @@
+<script>
+    function one(){
+        console.log('one run');
+        console.info('one finish');
+    }
+
+    function two(){
+        console.log('two run');
+        one();
+        console.log('two finish');
+    }
+
+    function three(){
+        console.log('three run');
+        two();
+        console.log('three finish');
+    }
+    //쓰레드 : 일할 수 있는 가장 작은 단위
+    three();
+</script>
