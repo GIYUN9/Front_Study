@@ -1,0 +1,40 @@
+.area{
+    border: 1px solid black;
+    align-items: center;
+    justify-self: center;
+    width: 400px;
+}
+
+.bottom-border {
+    border-width: 0px 0px 1px;
+    border-bottom-style: dotted;
+    outline: none;
+}
+
+#message{
+    font-size: 12px;
+    color: gray;
+    padding-left: 80px;
+}
+
+#sub-btn{
+    width: 90%;
+    background-color: aquamarine;
+    text-align: center;
+    padding : 5px;
+    margin-top: 48px;
+    margin-left: 5%;
+}
+
+div{
+    justify-content: center;
+    justify-items: center;
+    text-align: left;
+}
+div > input{
+    text-align: center;
+}
+
+#em::before{
+    content: '@';
+}
