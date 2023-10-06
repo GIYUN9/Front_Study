@@ -34,7 +34,3 @@ div{
 div > input{
     text-align: center;
 }
-
-#em::before{
-    content: '@';
-}
