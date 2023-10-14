@@ -1,5 +1,8 @@
 const todoList = [];
-
+// 로컬 스토리지에서 내용 불러오기
+window.onload = function(){
+    localStorage.getItem('todoList');
+}
 function addTodo(ev){
 
     if (document.getElementById('search-input').value.trim() === '')
@@ -28,9 +31,6 @@ function addTodo(ev){
         removeBtn.className = 'remove-btn';
         removeBtn.innerHTML = "<i class='fa-solid fa-xmark'></i>";
         todoNode.appendChild(removeBtn); // <div>밥먹기<button><i class='fa-solid fa-xmark'></i></button></div>
-        removeBtn.onclick = function(){
-            this.parentNode.remove();
-        }
 
         document.getElementById('search-input').value = '';
 
@@ -44,7 +44,13 @@ function addTodo(ev){
         // 요소 생성하는 함수호출
         const todoNode = getTodoNode();
         toDoListView.appendChild(todoNode);
+
+        // 저장?
+        const todoListStr = JSON.stringify(todoList);
+        localStorage.setItem('todoList', todoListStr);
     }
 
 
 }
+
+
